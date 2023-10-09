@@ -1,0 +1,30 @@
+{
+  "title": "Foto Random 01",
+  "description": "Mi sono ritrovato questa foto nella galleria, riesci a dirmi dov'\u00e8 la citt\u00e0 dove la ho scattata?\n\nIl formato della flag \u00e8 `flag{<plus_code>}`",
+  "authors": [
+    "Leonardo Giovannini <@maitai>"
+  ],
+  "tags": [
+    "OSINT"
+  ],
+  "hiddenTags": [],
+  "order": 5,
+  "flags": [
+    "^flag\\{RGV2\\+7G\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [
+    {
+      "name": "statua.jpg",
+      "type": "upload",
+      "path": "./attachments/statua.jpg",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

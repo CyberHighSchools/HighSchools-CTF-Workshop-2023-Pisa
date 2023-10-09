@@ -1,0 +1,27 @@
+{
+  "title": "Diffie - Hellman Key Exchange",
+  "description": "Questa \u00e8 una challenge remote, accedi al sito web per giocare: [http://dhke.challs.if2023.cyberhighschools.it](http://dhke.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Lorenzo Catoni <@lorenzcat>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [],
+  "order": 5,
+  "flags": [
+    "^flag\\{N0w_you_know_h0w_7o_exchange_a_k3y\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://dhke.challs.if2023.cyberhighschools.it:80/"
+  }
+}

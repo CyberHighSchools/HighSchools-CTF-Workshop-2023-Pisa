@@ -1,0 +1,30 @@
+{
+  "title": "Corrupted Mascotte",
+  "description": "Volevo scaricare una immagine, ma credo che qualcosa sia andato storto...",
+  "authors": [
+    "Giorgio Dell'Immagine <@gio-d3141>"
+  ],
+  "tags": [
+    "network"
+  ],
+  "hiddenTags": [],
+  "order": 6,
+  "flags": [
+    "^flag\\{corrupted_gabibbo_is_sad_gabibbo\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [
+    {
+      "name": "corrupted_mascotte.pcapng",
+      "type": "upload",
+      "path": "./attachments/corrupted_mascotte.pcapng",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

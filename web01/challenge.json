@@ -1,0 +1,29 @@
+{
+  "title": "hidden_file",
+  "description": "C'\u00e8 un file nascosto che potrebbe contenere una flag, riuscirai a trovarlo? :^)\n\nSito: [http://hidden-file.challs.if2023.cyberhighschools.it](http://hidden-file.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Aleandro Prudenzano <@drw0if>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [
+    "robots.txt"
+  ],
+  "order": 1,
+  "flags": [
+    "^flag\\{well_not_really_a_security_challenge_but_somewhere_you_need_to_start!\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://hidden-file.challs.if2023.cyberhighschools.it:80/"
+  }
+}

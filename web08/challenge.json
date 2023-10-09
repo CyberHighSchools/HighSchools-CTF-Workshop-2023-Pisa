@@ -1,0 +1,29 @@
+{
+  "title": "useless-panel-reborn",
+  "description": "Anche questa volta ho aggiustato il bug, ma l'applicazione continua ad essere inutile. O forse no?\n\nSito: [http://useless-panel-reborn.challs.if2023.cyberhighschools.it](http://useless-panel-reborn.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Aleandro Prudenzano  <@drw0if>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [
+    "massive assignment"
+  ],
+  "order": 8,
+  "flags": [
+    "^flag\\{response_to_request_injection_is_basically_massive_assignment\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://useless-panel-reborn.challs.if2023.cyberhighschools.it:80/"
+  }
+}

@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  chall:
+    build: .
+    ports:
+      - "30002:5000"
+    restart: unless-stopped
+    environment:
+      - FLAG=flag{monoalphabetic_substitution_is_not_a_good_idea_zzzz}

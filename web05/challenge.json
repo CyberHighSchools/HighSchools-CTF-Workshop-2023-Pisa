@@ -1,0 +1,29 @@
+{
+  "title": "lovely encoding",
+  "description": "Javascript is awesome (no, it's not!)\n\nSito: [http://js-awesome.challs.if2023.cyberhighschools.it](http://js-awesome.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Edoardo Geraci <@b0n0b0>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [
+    "javascript"
+  ],
+  "order": 5,
+  "flags": [
+    "^flag\\{wait_is_this_crypto_or_web\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://js-awesome.challs.if2023.cyberhighschools.it:80/"
+  }
+}

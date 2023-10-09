@@ -1,0 +1,30 @@
+{
+  "title": "Document Naming System",
+  "description": "Non troverai mai come \u00e8 stata trasmessa la flag!",
+  "authors": [
+    "Giorgio Dell'Immagine <@gio-d3141>"
+  ],
+  "tags": [
+    "network"
+  ],
+  "hiddenTags": [],
+  "order": 5,
+  "flags": [
+    "^flag\\{3vil_dns_s3rv3r!\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [
+    {
+      "name": "document_naming_system.pcapng",
+      "type": "upload",
+      "path": "./attachments/document_naming_system.pcapng",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

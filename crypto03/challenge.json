@@ -1,0 +1,27 @@
+{
+  "title": "Cifrario di Vigen\u00e8re",
+  "description": "Questa \u00e8 una challenge remote, accedi al sito web per giocare: [http://vigenere.challs.if2023.cyberhighschools.it](http://vigenere.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Lorenzo Catoni <@lorenzcat>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [],
+  "order": 3,
+  "flags": [
+    "^flag\\{POLYALPHCIPHERSARECOOL\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://vigenere.challs.if2023.cyberhighschools.it:80/"
+  }
+}

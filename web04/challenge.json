@@ -1,0 +1,29 @@
+{
+  "title": "traverse_me",
+  "description": "Ho trovato questa galleria di quadri, chiss\u00e0 se ce ne sono di nascosti.\n\nLa flag \u00e8 in /flag.txt\n\nSito: [http://traverse.challs.if2023.cyberhighschools.it](http://traverse.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Edoardo Geraci <@b0n0bo>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [
+    "path traversal"
+  ],
+  "order": 4,
+  "flags": [
+    "^flag\\{m3_and_7h3_boys_a77rav3rsando1a\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://traverse.challs.if2023.cyberhighschools.it:80/"
+  }
+}

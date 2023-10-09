@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="font-size-lg h1 text-light navbar-brand" href="#">Useless Panel</a>
+    </nav>
+    <div class="container mt-5">
+        <form id="form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm password:</label>
+                <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password">
+            </div>
+            <button type="submit" class="btn btn-primary">REGISTER</button>
+        </form>
+    </div>
+    <script>
+        function register(evt) {
+            evt.preventDefault();
+
+            let username = document.querySelector('input[name="username"]').value;
+            let password = document.querySelector('input[name="password"]').value;
+            let confirm_password = document.querySelector('input[name="confirm_password"]').value;
+            
+            if (password !== confirm_password){
+                alert("Password and confirm password do not match");
+                return false;
+            }
+
+            let data = {
+                username,
+                password,
+            };
+
+            fetch('/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.status === 201)
+                    window.location.href = '/';
+                else{
+                    response.json().then(data => {
+                        alert(`Error: ${data.error}`);
+                    });
+                }
+            })
+
+            return false;
+        }
+    
+        document.querySelector('#form').addEventListener('submit', register);
+    </script>
+</body>
+</html>

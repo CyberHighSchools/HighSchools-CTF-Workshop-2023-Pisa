@@ -1,0 +1,30 @@
+{
+  "title": "A distracted admin",
+  "description": "Sembra che sia riuscito ad intercettare la password dell'admin mentre accedeva al suo sito, puoi aiutarmi a ritrovarla?",
+  "authors": [
+    "Giorgio Dell'Immagine <@gio-d3141>"
+  ],
+  "tags": [
+    "network"
+  ],
+  "hiddenTags": [],
+  "order": 1,
+  "flags": [
+    "^flag\\{un4_p4ssw0rd_veram3nte_n4sc0sta\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [
+    {
+      "name": "a_distracted_admin.pcapng",
+      "type": "upload",
+      "path": "./attachments/a_distracted_admin.pcapng",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

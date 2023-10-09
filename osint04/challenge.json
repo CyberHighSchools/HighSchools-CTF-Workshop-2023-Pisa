@@ -1,0 +1,23 @@
+{
+  "title": "Una nuova azienda 04",
+  "description": "Sembra che il CTO della azienda abbia creato un tool super utile su github.\n\nRiesci a trovare la flag nascosta?",
+  "authors": [
+    "Leonardo Giovannini <@maitai>"
+  ],
+  "tags": [
+    "OSINT"
+  ],
+  "hiddenTags": [],
+  "order": 4,
+  "flags": [
+    "^flag\\{th1s_sh0uld_be_h1dd3n\\?\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": []
+}

@@ -1,0 +1,5 @@
+User-agent: human-being
+Allow: /
+
+Disallow: /39185d1b78d1cec390b777d9e82c01a3/a35f6c043cd0f215ab114bc7824e25e1.gif
+Disallow: /39185d1b78d1cec390b777d9e82c01a3/79df7045bba0bcb6303752558412f300.txt

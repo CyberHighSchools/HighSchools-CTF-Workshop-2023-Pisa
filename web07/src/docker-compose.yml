@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  traverse_me_more:
+    build: .
+    container_name: "traverse_me_more"
+    ports:
+      - 3000:5000

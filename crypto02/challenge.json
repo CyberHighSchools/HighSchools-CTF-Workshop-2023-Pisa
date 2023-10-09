@@ -1,0 +1,27 @@
+{
+  "title": "Crittografia secondo i film pt. 2",
+  "description": "Questa \u00e8 una challenge remote, accedi al sito web per giocare: [http://crypto-film.challs.if2023.cyberhighschools.it](http://crypto-film.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Lorenzo Catoni <@lorenzcat>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [],
+  "order": 2,
+  "flags": [
+    "^flag\\{monoalphabetic_substitution_is_not_a_good_idea_zzzz\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://crypto-film.challs.if2023.cyberhighschools.it:80/"
+  }
+}

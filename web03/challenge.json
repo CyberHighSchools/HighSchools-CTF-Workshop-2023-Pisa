@@ -1,0 +1,27 @@
+{
+  "title": "was_it_a_flag",
+  "description": "Sotto gli occhi :eyes:\n\nSito: [http://was-it-a-flag.challs.if2023.cyberhighschools.it](http://was-it-a-flag.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Edordo Geraci <@b0n0b0>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 3,
+  "flags": [
+    "^flag\\{go_visit->http://cioe\\.deallora\\.de\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://was-it-a-flag.challs.if2023.cyberhighschools.it:80/"
+  }
+}

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  useless-panel:
+    build:
+      context: ./
+    ports:
+      - "3000:3000"
+    environment:
+      FLAG: "flag{never_trust_user_provided_cookies}"
+      SECRET: "80e9919a95ddb2097b61d68970d839eb"

@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  chall:
+    build: .
+    ports:
+      - "30005:5000"
+    restart: unless-stopped
+    environment:
+      - FLAG=flag{N0w_you_know_h0w_7o_exchange_a_k3y}

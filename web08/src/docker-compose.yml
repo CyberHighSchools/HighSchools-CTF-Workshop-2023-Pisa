@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  useless-panel-reborn:
+    build:
+      context: ./
+    ports:
+      - "3000:3000"
+    environment:
+      FLAG: "flag{response_to_request_injection_is_basically_massive_assignment}"
+      SECRET: "f34e1ff869f85a6f5d89ce73404d8073"

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1>Welcome <%= user.username %>!</h1>
+
+        <% if (user.description) { %>
+        <p>Description: <%= user.description %></p>
+        <% } %>
+
+        <h2>Notes:</h2>
+        <% for(let i = 0; i < user.notes.length; i++){ %>
+        <p><%= user.notes[i] %></p>
+        <% } %>
+
+        <form id="note_form" class="mt-3">
+            <div class="form-group">
+                <label for="new_note">Add Note:</label>
+                <textarea class="form-control" name="new_note" id="new_note" cols="30" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add note</button>
+        </form>
+
+        <form id="edit_description" class="mt-3">
+            <div class="form-group">
+                <label for="description">Edit Description:</label>
+                <textarea class="form-control" name="description" id="description" cols="30" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Edit description</button>
+        </form>
+
+        <a href="/admin" class="btn btn-primary mt-3">Admin</a>
+    </div>
+
+    <script>
+        function send_note(evt){
+            evt.preventDefault();
+
+            let note = document.querySelector('textarea[name="new_note"]').value;
+
+            let data = {
+                note
+            };
+
+            fetch('/api/add_note', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.status === 201)
+                    window.location.href = '/';
+                else{
+                    response.json().then(data => {
+                        alert(`Error: ${data.error}`);
+                    });
+                }
+            })
+
+            return false;
+        }
+
+        function edit_description(evt){
+            evt.preventDefault();
+
+            let description = document.querySelector('textarea[name="description"]').value;
+
+            let data = {
+                description
+            };
+
+            fetch('/api/edit_description', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.status === 201)
+                    window.location.href = '/';
+                else{
+                    response.json().then(data => {
+                        alert(`Error: ${data.error}`);
+                    });
+                }
+            })
+
+            return false;
+        }
+
+        document.querySelector('#note_form').addEventListener('submit', send_note);
+        document.querySelector('#edit_description').addEventListener('submit', edit_description);
+    </script>
+</body>
+</html>

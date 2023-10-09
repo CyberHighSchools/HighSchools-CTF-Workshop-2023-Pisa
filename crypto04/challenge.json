@@ -1,0 +1,27 @@
+{
+  "title": "Many Time Pad",
+  "description": "Questa \u00e8 una challenge remote, accedi al sito web per giocare: [http://mtp.challs.if2023.cyberhighschools.it](http://mtp.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Lorenzo Catoni <@lorenzcat>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [],
+  "order": 4,
+  "flags": [
+    "^flag\\{Nev3r_ev3r_Reu5e_th3_x0R_key!0a4afc6f\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://mtp.challs.if2023.cyberhighschools.it:80/"
+  }
+}

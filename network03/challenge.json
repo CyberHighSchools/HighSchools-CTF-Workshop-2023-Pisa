@@ -1,0 +1,30 @@
+{
+  "title": "Last Standing Bytes",
+  "description": "Ho scattato una bella foto al ponte di mezzo, ma potrei averci nascosto dentro un segreto :eyes:",
+  "authors": [
+    "Giorgio Dell'Immagine <@gio-d3141>"
+  ],
+  "tags": [
+    "forensics"
+  ],
+  "hiddenTags": [],
+  "order": 3,
+  "flags": [
+    "^flag\\{LSB_h1dd3n_s3cret_1s_n0t_s0_hidden_s3cret\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [
+    {
+      "name": "last_standing_bytes.png",
+      "type": "upload",
+      "path": "./attachments/last_standing_bytes.png",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

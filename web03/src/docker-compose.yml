@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  was_it_a_flag:
+    build: .
+    ports:
+      - "3000:80"
+    privileged: false
+    environment:
+      - FLAG=flag{go_visit->http://cioe.deallora.de}
+      - PASSWORD=dee9aa56b51724da7ab973f799e94402

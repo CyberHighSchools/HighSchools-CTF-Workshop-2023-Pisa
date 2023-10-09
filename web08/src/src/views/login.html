@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="font-size-lg h1 text-light navbar-brand" href="#">Useless Panel</a>
+    </nav>
+    <div class="d-flex flex-column justify-content-start align-content-start container mt-5">
+        <form id="form" class="bg-light rounded">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">LOGIN</button>
+        </form>
+        <a href="/register" class="btn btn-link mt-3">Register</a>
+    </div>
+    <script>
+        function login(evt) {
+            evt.preventDefault();
+
+            let username = document.querySelector('input[name="username"]').value;
+            let password = document.querySelector('input[name="password"]').value;
+            let data = {
+                username: username,
+                password: password
+            };
+
+            // submit request using fetch API
+            fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.status === 201)
+                    window.location.href = '/';
+                else{
+                    response.json().then(data => {
+                        alert(`Error: ${data.error}`);
+                    });
+                }
+            })
+
+            return false;
+        }
+
+        document.querySelector('#form').addEventListener('submit', login);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "title": "Una nuova azienda 01",
+  "description": "La nostra azienda, la `escape-ln-zeros`, approda sul web per la prima volta in 20 anni.\n\nPer ora abbiamo solo questo dominio `escapelnzeros.me` ma presto approderemo anche sui social network.\n\n**DISCLAIMER**: \u00e8 consigliabile giocare le challenge in ordine, in quanto in ogni challenge ci saranno\ninformazioni necessarie per la challenge successiva",
+  "authors": [
+    "Leonardo Giovannini <@maitai>"
+  ],
+  "tags": [
+    "OSINT"
+  ],
+  "hiddenTags": [],
+  "order": 1,
+  "flags": [
+    "^flag\\{th1s_1s_th3_f1rst_fl4g_0f_os1n7_s3r13s\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": []
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Foto Random 02",
+  "description": "Sono andato a fare un aperitivo in questo posto, riesci a capire quanto ho speso per un calice di vino, un drink analcolico ed un dolce?\n\nIl formato della flag \u00e8 `flag{costo\u20ac}` (esempio `flag{42\u20ac}`)",
+  "authors": [
+    "Leonardo Giovannini <@maitai>"
+  ],
+  "tags": [
+    "OSINT"
+  ],
+  "hiddenTags": [],
+  "order": 6,
+  "flags": [
+    "^flag\\{53\u20ac\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [
+    {
+      "name": "aperitivo.png",
+      "type": "upload",
+      "path": "./attachments/aperitivo.png",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

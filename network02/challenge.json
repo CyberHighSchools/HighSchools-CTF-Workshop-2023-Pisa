@@ -1,0 +1,30 @@
+{
+  "title": "My beautiful website",
+  "description": "Sono finalmente riuscito a mettere delle foto nel mio sito!",
+  "authors": [
+    "Giorgio Dell'Immagine <@gio-d3141>"
+  ],
+  "tags": [
+    "network"
+  ],
+  "hiddenTags": [],
+  "order": 2,
+  "flags": [
+    "^flag\\{3xport1ng_obj3cts\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [
+    {
+      "name": "my_beautiful_website.pcapng",
+      "type": "upload",
+      "path": "./attachments/my_beautiful_website.pcapng",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

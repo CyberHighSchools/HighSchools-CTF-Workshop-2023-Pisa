@@ -1,0 +1,37 @@
+{
+  "title": "traverse_me_more",
+  "description": "Questa volta ho fixato il problema della galleria d'arte, non riuscirai mai a carpire il mio segreto.\n\nLa flag \u00e8 in /flag.txt\n\nSito: [http://traverse-more.challs.if2023.cyberhighschools.it](http://traverse-more.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Edoardo Geraci <@b0n0b0>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [
+    "path traversal",
+    "blacklist"
+  ],
+  "order": 7,
+  "flags": [
+    "^flag\\{7rav3rs3_m3_baby_on3_mor3_7im3\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [
+    {
+      "name": "blacklist.py",
+      "type": "upload",
+      "path": "./attachments/blacklist.py",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://traverse-more.challs.if2023.cyberhighschools.it:80/"
+  }
+}

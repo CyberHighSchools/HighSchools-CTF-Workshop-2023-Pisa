@@ -1,0 +1,23 @@
+{
+  "title": "Una nuova azienda 03",
+  "description": "Sembra che la azienda abbia un nuovo CTO, riesci a trovare il suo profilo instagram?",
+  "authors": [
+    "Leonardo Giovannini <@maitai>"
+  ],
+  "tags": [
+    "OSINT"
+  ],
+  "hiddenTags": [],
+  "order": 3,
+  "flags": [
+    "^flag\\{y0u_h4v3_0s1nt3d_3v3n_th3_CT0!!\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": []
+}

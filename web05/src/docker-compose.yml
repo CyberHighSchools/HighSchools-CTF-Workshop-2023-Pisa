@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  hidden_file:
+    build: .
+    ports:
+      - "3000:80"
+    privileged: false
+

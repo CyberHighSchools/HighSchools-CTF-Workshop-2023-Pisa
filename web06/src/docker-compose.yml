@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  useless-panel:
+    build:
+      context: ./
+    ports:
+      - "3000:3000"
+    environment:
+      FLAG: "flag{¿who_does_not_love_easy_access?}"

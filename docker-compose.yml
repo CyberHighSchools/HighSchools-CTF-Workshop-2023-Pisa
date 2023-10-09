@@ -1,0 +1,196 @@
+services:
+  # Web 01
+  web01:
+    build: ./web01/src
+    privileged: false
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.web01.entrypoints=web"
+      - "traefik.http.routers.web01.rule=Host(`hidden-file.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.web01.loadbalancer.server.port=80"
+    networks:
+      - web
+  # Web 02
+  web02:
+    build: ./web02/src
+    privileged: false
+    restart: unless-stopped
+    environment:
+      FLAG: "flag{never_trust_user_provided_cookies}"
+      SECRET: "80e9919a95ddb2097b61d68970d839eb"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.web02.entrypoints=web"
+      - "traefik.http.routers.web02.rule=Host(`useless-panel.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.web02.loadbalancer.server.port=3000"
+    networks:
+      - web
+  # Web 03
+  web03:
+    build: ./web03/src
+    privileged: false
+    restart: unless-stopped
+    environment:
+      - FLAG=flag{go_visit->http://cioe.deallora.de}
+      - PASSWORD=dee9aa56b51724da7ab973f799e94402
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.web03.entrypoints=web"
+      - "traefik.http.routers.web03.rule=Host(`was-it-a-flag.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.web03.loadbalancer.server.port=80"
+    networks:
+      - web
+  # Web 4
+  web04:
+    build: ./web04/src
+    privileged: false
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.web04.entrypoints=web"
+      - "traefik.http.routers.web04.rule=Host(`traverse.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.web04.loadbalancer.server.port=5000"
+    networks:
+      - web
+  # Web 05
+  web05:
+    build: ./web05/src
+    privileged: false
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.web05.entrypoints=web"
+      - "traefik.http.routers.web05.rule=Host(`js-awesome.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.web05.loadbalancer.server.port=80"
+    networks:
+      - web
+  # Web 06
+  web06:
+    build: ./web06/src
+    privileged: false
+    restart: unless-stopped
+    environment:
+      FLAG: "flag{¿who_does_not_love_easy_access?}"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.web06.entrypoints=web"
+      - "traefik.http.routers.web06.rule=Host(`easy-access.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.web06.loadbalancer.server.port=3000"
+    networks:
+      - web
+  # Web 07
+  web07:
+    build: ./web07/src
+    privileged: false
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.web07.entrypoints=web"
+      - "traefik.http.routers.web07.rule=Host(`traverse-more.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.web07.loadbalancer.server.port=5000"
+    networks:
+      - web
+  # Web 08
+  web08:
+    build: ./web08/src
+    privileged: false
+    restart: unless-stopped
+    environment:
+      FLAG: "flag{response_to_request_injection_is_basically_massive_assignment}"
+      SECRET: "f34e1ff869f85a6f5d89ce73404d8073"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.web08.entrypoints=web"
+      - "traefik.http.routers.web08.rule=Host(`useless-panel-reborn.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.web08.loadbalancer.server.port=3000"
+    networks:
+      - web
+
+  # Crypto 02
+  crypto02:
+    build: ./crypto02/src
+    privileged: false
+    restart: unless-stopped
+    environment:
+      - FLAG=flag{monoalphabetic_substitution_is_not_a_good_idea_zzzz}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.crypto02.entrypoints=web"
+      - "traefik.http.routers.crypto02.rule=Host(`crypto-film.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.crypto02.loadbalancer.server.port=5000"
+    networks:
+      - web
+  # Crypto 03
+  crypto03:
+    build: ./crypto03/src
+    privileged: false
+    restart: unless-stopped
+    environment:
+      - FLAG=POLYALPHCIPHERSARECOOL
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.crypto03.entrypoints=web"
+      - "traefik.http.routers.crypto03.rule=Host(`vigenere.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.crypto03.loadbalancer.server.port=5000"
+    networks:
+      - web
+  # Crypto 04
+  crypto04:
+    build: ./crypto04/src
+    privileged: false
+    restart: unless-stopped
+    environment:
+      - FLAG=flag{Nev3r_ev3r_Reu5e_th3_x0R_key!0a4afc6f}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.crypto04.entrypoints=web"
+      - "traefik.http.routers.crypto04.rule=Host(`mtp.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.crypto04.loadbalancer.server.port=5000"
+    networks:
+      - web
+  # Crypto 05
+  crypto05:
+    build: ./crypto05/src
+    privileged: false
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.crypto05.entrypoints=web"
+      - "traefik.http.routers.crypto05.rule=Host(`dhke.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.crypto05.loadbalancer.server.port=5000"
+    environment:
+      - FLAG=flag{N0w_you_know_h0w_7o_exchange_a_k3y}
+    networks:
+      - web
+  # Crypto 06
+  crypto06:
+    build: ./crypto06/src
+    privileged: false
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.crypto06.entrypoints=web"
+      - "traefik.http.routers.crypto06.rule=Host(`otp-pp.challs.if2023.cyberhighschools.it`)"
+      - "traefik.http.services.crypto06.loadbalancer.server.port=5000"
+    environment:
+      - FLAG=flag{7hatW4s7Sm4r7}
+    networks:
+      - web
+
+networks:
+  web:
+    external: true

@@ -1,0 +1,23 @@
+{
+  "title": "Una nuova azienda 02",
+  "description": "Non scordatevi di votare il sondaggio su twitter riguardo al nuovo logo della azienda",
+  "authors": [
+    "Leonardo Giovannini <@maitai>"
+  ],
+  "tags": [
+    "OSINT"
+  ],
+  "hiddenTags": [],
+  "order": 2,
+  "flags": [
+    "^flag\\{y0u_h4v3_0s1nt3d_us\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": []
+}

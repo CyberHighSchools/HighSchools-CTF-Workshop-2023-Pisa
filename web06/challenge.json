@@ -1,0 +1,36 @@
+{
+  "title": "easy_access",
+  "description": "Impossibile accedere alla flag, davvero, impossibile fare altrimenti.\n\nSito: [http://easy-access.challs.if2023.cyberhighschools.it](http://easy-access.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Edoardo Geraci <@b0n0b0>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [
+    "javascript shenanigans"
+  ],
+  "order": 6,
+  "flags": [
+    "^flag\\{\u00bfwho_does_not_love_easy_access\\?\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [
+    {
+      "name": "index.js",
+      "type": "upload",
+      "path": "./attachments/index.js",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://easy-access.challs.if2023.cyberhighschools.it:80/"
+  }
+}

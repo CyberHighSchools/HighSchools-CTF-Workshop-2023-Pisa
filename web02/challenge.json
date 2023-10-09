@@ -1,0 +1,29 @@
+{
+  "title": "useless-panel",
+  "description": "Un pannello assolutamente inutile, ma forse l'admin nasconde qualcosa!\n\nSito: [http://useless-panel.challs.if2023.cyberhighschools.it](http://useless-panel.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Aleandro Prudenzano <@drw0if>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [
+    "cookie"
+  ],
+  "order": 2,
+  "flags": [
+    "^flag\\{never_trust_user_provided_cookies\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://useless-panel.challs.if2023.cyberhighschools.it:80/"
+  }
+}

@@ -1,0 +1,1 @@
+Cifrario di Vigenère

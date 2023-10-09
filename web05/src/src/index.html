@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Lovely Encoding</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+  <div class="d-flex mw-100 mh-100 flex-column justify-content-center align-items-center container mt-5">
+    <h1 >Encoded Flag:</h1>
+    <h2 id="encoded-string" class="font-lg">synt{jnvg_vf_guvf_pelcgb_be_jro}</h2>
+    <h2 id="success" class="text-danger"></h2>
+    <form id="myForm"class=" d-flex flex-column align-items-center justify-content-center">
+      <div class="mb-3">
+        <h3 class="form-label font-lg">Enter the flag:</h3>
+        <input type="text" class="form-control font-lg" id="inputText" name="inputText" required>
+      </div>
+      <button type="submit" class="btn btn-primary font-lg">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const inputText = document.getElementById("inputText").value;
+      const encoded_flag = "synt{jnvg_vf_guvf_pelcgb_be_jro}"
+      check_value(encoded_flag, inputText)
+    });
+
+    function customEncode(inputString, shift) {
+      if (typeof inputString !== 'string' || typeof shift !== 'number') {
+        throw new Error('Input must be a string, and shift must be a number');
+      }
+
+      let encodedString = '';
+
+      for (let i = 0; i < inputString.length; i++) {
+        const char = inputString.charAt(i);
+        const charCode = inputString.charCodeAt(i);
+
+        if (/[a-zA-Z]/.test(char)) {
+          const isUpperCase = char === char.toUpperCase();
+          const baseCharCode = isUpperCase ? 'A'.charCodeAt(0) : 'a'.charCodeAt(0);
+          const shiftedCharCode = ((charCode - baseCharCode + shift) % 26 + 26) % 26 + baseCharCode;
+          encodedString += String.fromCharCode(shiftedCharCode);
+        } else {
+          encodedString += char;
+        }
+      }
+
+      return encodedString;
+    }
+
+    function customDecode(encodedString, shift) {
+      return customEncode(encodedString, -shift);
+    }
+
+    function check_value(encodedString, plaintext) {
+      if (encodedString === customEncode(plaintext, 13)) {
+        document.getElementById("success").innerHTML = "Winner winner chicken dinner!!!"
+      }
+    }
+  </script>
+
+</body>
+
+</html>

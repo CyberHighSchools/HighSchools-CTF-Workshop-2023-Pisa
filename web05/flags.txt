@@ -1,0 +1,1 @@
+flag{wait_is_this_crypto_or_web}

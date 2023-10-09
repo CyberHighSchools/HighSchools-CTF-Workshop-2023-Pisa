@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
+		integrity="sha512-hasIneQUHlh06VNBe7f6ZcHmeRTLIaQWFd43YriJ0UND19bvYRauxthDg8E4eVNPm9bRUhr5JGeqH7FRFXQu5g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"
+		integrity="sha512-rdhY3cbXURo13l/WU9VlaRyaIYeJ/KBakckXIvJNAQde8DgpOmE+eZf7ha4vdqVjTtwQt69bD2wH2LXob/LB7Q=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"
+		integrity="sha512-UsuvR/LRT1kQthy0F2+lc93U0HuKMQAcwcIVBqnGJOZCycza2xYO+0QAatJNl89B5IHl9HO3PexXG/1eR7W9JA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>hljs.highlightAll();</script>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 2rem;
+		}
+
+		.intro {
+			display: grid;
+			gap: 1rem;
+			grid-template-areas:
+				"title title"
+				"desc img"
+				"help img";
+			padding-bottom: 2rem;
+		}
+
+		.title {
+			grid-area: title;
+		}
+
+		.desc {
+			grid-area: desc;
+		}
+
+		.img {
+			grid-area: img;
+			align-self: center;
+			box-shadow: 5px 5px 5px 5px rgba(128, 128, 128, 0.247);
+			margin: 2rem 0;
+		}
+
+		.help {
+			grid-area: help;
+		}
+
+		.grid-container {
+			display: grid;
+			gap: 2rem;
+			grid-template-columns: repeat(auto-fit, calc(50% - 1rem));
+		}
+
+		.grid-item {
+			background: white;
+			box-shadow: 5px 5px 5px 5px rgba(128, 128, 128, 0.247);
+			border-radius: 15px;
+			padding: 15px;
+			align-self: start;
+		}
+
+		code {
+			border-radius: 12px;
+			font-size: 0.8rem;
+		}
+
+		p>code {
+			background: #f3f3f3;
+			color: #444;
+			padding: 0.2rem;
+			border-radius: 4px;
+		}
+
+		/* Media query for mobile view */
+		@media (max-width: 767px) {
+			body {
+				padding: 0.5rem;
+			}
+
+			.grid-container {
+				grid-template-columns: repeat(auto-fit, 100%);
+			}
+
+			.intro {
+				grid-template-areas:
+					"title"
+					"desc"
+					"img"
+					"help";
+			}
+		}
+
+		label {
+			font-size: 0.8rem;
+			padding: 0.3rem;
+			left: 0.5rem;
+			position: relative;
+			top: 0.5rem;
+			background-color: white;
+			color: grey;
+		}
+
+		input[type="text"] {
+			width: calc(100%);
+			padding: 10px;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			box-shadow: 5px 5px 5px 0px rgba(128, 128, 128, 0.247);
+			margin-bottom: 10px;
+			border-radius: 4px;
+		}
+
+		input[type="text"].error {
+			border: 1px solid red;
+			box-shadow: 5px 5px 5px 0px rgba(128, 0, 0, 0.247);
+		}
+
+		button {
+			margin: 0 0 0 auto;
+			display: block;
+			padding: 10px 20px;
+			background-color: #007bff;
+			box-shadow: 5px 5px 5px 0px rgba(128, 128, 128, 0.247);
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		button:hover {
+			background-color: #0056b3;
+		}
+
+		code.inline {
+			box-sizing: border-box;
+			border-radius: 4px;
+			display: inline-block;
+			white-space: normal;
+			max-width: 100%;
+			width: 100%;
+			word-break: break-all;
+			word-wrap: break-word;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="intro">
+		<h1 class="title">OTP++</h1>
+		<div class="desc">
+			<h2>Descrizione</h2>
+			<p>In questa sfida, gli utenti hanno la possibilità di interrogare il server tramite la funzione
+				<code>get_encrypted_message</code>.
+				Quando viene chiamata, la funzione genera una chiave segreta e lunga quanto la flag e la usa per cifrare usando lo xor.
+				Prima di restituire il risultato il server controlla che nessun carattere della flag sia rimasto inalterato, altrimenti
+				genera una nuova chiave e tenta di nuovo la cifratura.<br>
+				Lo scopo della sfida è recuperare la flag.
+			</p>
+		</div>
+		<div class="img">
+			<img src="{{ url_for('static', filename='images/xor-properties.png') }}" alt="vigenere_cipher_table" width="100%">
+		</div>
+		<div class="help">
+			<h2>Aiuto</h2>
+			<p>Interagisci con il server tramite il bottone SEND, oppure dalla console
+				tramite la funzione
+			<code>await get_encrypted_message()</code>.<br> Puoi usare lo HEX ENCODER/DECODER per convertire da hex ad
+			ascii e viceversa, oppure puoi usare dalla console le funzioni
+			<code>hex2a(your_hex_input)</code> e
+			<code>a2hex(your_ascii_input)</code>.<br> Puoi usare lo XOR TOOL per eseguire lo xor tra due strighe in hex, oppure puoi usare dalla console la funzione <code>xor(in1, in2)</code> (la funziona xor si aspetta stringhe ascii in input).
+			</p>
+		</div>
+	</div>
+
+
+	<div class="grid-container">
+		<div class="grid-item">
+			<h2>SOURCE</h2>
+			<pre><code class="lang-python">{{ source }}</code></pre>
+		</div>
+		<div class="grid-item">
+			<h2>INTERACT</h2>
+			<h3>GET_ENCRYPTED_MESSAGE()</h3>
+			<form id="input_form">
+				<!-- <label for="input">Input in hex</label>
+				<input type="text" id="input" /> -->
+				<button>SEND</button>
+			</form>
+			<h3>OUTPUT</h3>
+			<pre><code id="output" class="inline"></code></pre>
+		</div>
+		<div class="grid-item">
+			<h2>XOR TOOL</h2>
+			<label for="xor1">Input 1 in hex</label>
+			<input type="text" id="xor1" />
+			<label for="xor2">Input 2 in hex</label>
+			<input type="text" id="xor2" />
+			<pre><code class="inline" id="xor_output"></code></pre>
+		</div>
+		<div class="grid-item">
+			<h2>HEX ENCODER/DECODER</h2>
+			<label for="hex">Hex here</label>
+			<input type="text" id="hex" />
+			<label for="ascii">Ascii here</label>
+			<input type="text" id="ascii" />
+		</div>
+	</div>
+</body>
+
+<script>
+	// Convert a hex string to a byte array
+	function ishex(hex) {
+		return hex.length % 2 == 0 && /^[0-9a-fA-F]*$/.test(hex);
+	}
+
+	function hex2a(hex) {
+		var str = '';
+		for (var i = 0; i < hex.length; i += 2)
+			str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+		return str;
+	}
+
+	function a2hex(str) {
+		var arr = [];
+		for (var i = 0, l = str.length; i < l; i++) {
+			var hex = Number(str.charCodeAt(i)).toString(16).padStart(2, '0');
+			arr.push(hex);
+		}
+		return arr.join('');
+	}
+
+	// xor two strings stopping at the end of the shortest
+	function xor(a, b) {
+		let r = "";
+		for (let i = 0; i < Math.min(a.length, b.length); i++) {
+			r += String.fromCharCode(a.charCodeAt(i) ^ b.charCodeAt(i));
+		}
+		return r;
+	}
+
+	// INTERACT
+	document.getElementById("input_form").addEventListener("submit", async (e) => {
+		e.preventDefault();
+		// const input = document.getElementById("input").value;
+		// if (!input) return;
+		const json = await get_encrypted_message();
+		document.getElementById("output").innerText = JSON.stringify(json);
+	});
+
+	async function get_encrypted_message() {
+		const url = '/get_encrypted_message'
+		const res = await fetch(url);
+		const json = await res.json();
+		return json;
+	}
+
+	// XOR tool
+	const xors = [document.getElementById("xor1"), document.getElementById("xor2")];
+	xors.forEach(x => x.addEventListener("input", updateXorOutput));
+
+	function updateXorOutput() {
+		const xors = [document.getElementById("xor1"), document.getElementById("xor2")];
+
+		const r = xors.map(x => ishex(x.value) ? x.classList.remove("error") || true : x.classList.add("error") || false);
+		if (!r.every(x => x) || !xors.every(x => x.value)) {
+			document.getElementById("xor_output").innerText = "";
+			return;
+		}
+
+		document.getElementById("xor_output").innerText = a2hex(xor(...xors.map(x => hex2a(x.value))));
+	}
+
+	// HEX encoder/decoder
+	const hex = document.getElementById("hex");
+	const ascii = document.getElementById("ascii");
+
+	hex.addEventListener("input", () => {
+		if (!ishex(hex.value)) {
+			hex.classList.add("error");
+			ascii.value = "";
+			return;
+		}
+		hex.classList.remove("error");
+		ascii.value = hex2a(hex.value);
+	});
+
+	ascii.addEventListener("input", () => {
+		hex.value = a2hex(ascii.value);
+	});
+
+</script>
+
+</html>

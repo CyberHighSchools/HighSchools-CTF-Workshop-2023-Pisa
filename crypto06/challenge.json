@@ -1,0 +1,27 @@
+{
+  "title": "OTP++",
+  "description": "Questa \u00e8 una challenge remote, accedi al sito web per giocare: [http://otp-pp.challs.if2023.cyberhighschools.it](http://otp-pp.challs.if2023.cyberhighschools.it)",
+  "authors": [
+    "Lorenzo Catoni <@lorenz>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [],
+  "order": 6,
+  "flags": [
+    "^flag\\{7hatW4s7Sm4r7\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://otp-pp.challs.if2023.cyberhighschools.it:80/"
+  }
+}

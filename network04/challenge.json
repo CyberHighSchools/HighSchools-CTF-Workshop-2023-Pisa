@@ -1,0 +1,30 @@
+{
+  "title": "Nothing to see here",
+  "description": "Sembrerebbe una foto normale, ma qualcosa non quadra...",
+  "authors": [
+    "Giorgio Dell'Immagine <@gio-d3141>"
+  ],
+  "tags": [
+    "forensics"
+  ],
+  "hiddenTags": [],
+  "order": 4,
+  "flags": [
+    "^flag\\{wh4t_4_str4ng3_l00king_p1ctur3!\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 100,
+    "decay": "10"
+  },
+  "files": [
+    {
+      "name": "nothing_to_see_here.jpg",
+      "type": "upload",
+      "path": "./attachments/nothing_to_see_here.jpg",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}
