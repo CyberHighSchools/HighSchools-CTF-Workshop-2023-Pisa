@@ -1,6 +1,6 @@
 # IF2023 - HighSchools CTF Workshop
 
-Challenge per l'HighSchools CTF Workshop @ Internet Festival 2023 - Pisa del 7 Otteobre 2023
+Challenge per l'HighSchools CTF Workshop @ Internet Festival 2023 - Pisa del 7 Ottobre 2023
 
 ## Credits
 
